@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Suite" parallel="tests" thread-count="2">
+  <test name="Scenario1" >
+        
+		<classes>
+			<class name="MbTestRunner.MbBuyRunner" >
+			<methods>
+                <include name="GetPhoneNoWithValidDetails" />
+            </methods>
+			</class>
+			
+		</classes>	
+		
+  </test>
+  <test name="Scenario2" >
+		<classes>
+		    <class name="MbTestRunner.MbBuyRunner" >
+			<methods>
+                <include name="SortProperty" />
+            </methods>
+			</class>
+		</classes>	
+  </test>
+  <test name="Scenario3" >
+		<classes>
+		    <class name="MbTestRunner.MbBuyRunner" >
+			<methods>
+                <include name="GetPhoneNoWithValidDetails" />
+            </methods>
+			</class>
+		</classes>	
+  </test>
+  <test name="Scenario4">
+		<classes>
+		    <class name="MbTestRunner.MbBuyRunner" >
+			<methods>
+                <include name="GetPhoneNoWithInvalidDetails" />
+            </methods>
+			</class>
+		</classes>		
+  </test>
+  <test name="Scenario5" >
+		<classes>
+		    <class name="MbTestRunner.MbBuyRunner" >
+			<methods>
+                <include name="ShareProperty*" />
+            </methods>
+			</class>
+		</classes>		
+  </test>
+  
+</suite> <!-- Suite -->
