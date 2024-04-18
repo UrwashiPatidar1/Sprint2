@@ -29,7 +29,7 @@ Then User is able to get the details via email
 
 Examples:
 |userName|email|phoneNo|
-|Urwashi Patidar|patidarurwashi0@gmail.com|7610744757|
+|Urwashi Patidar|patidarurwashi0@gmail.com|8463837881|
 
 
 

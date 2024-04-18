@@ -140,6 +140,7 @@ public class MbBuyPage {
    	      js = (JavascriptExecutor) driver;
    		  js.executeScript("window.scroll(0,700)");
    	 }
+     
 	 
 	 public void HoverOnBuyOption() 
 	 {
@@ -151,8 +152,9 @@ public class MbBuyPage {
 	 {
 		  readyToMoveFeature.click(); 
 	 }
+	  
+//---------------------------------------Shortlist Property---------------------------------------------------
 	 
-//========================================================First Scenario================================================================================
 	 public void SwitchToReadyToMove() 
 	 {
 		  String mainWindowHandle = driver.getWindowHandle();
@@ -180,8 +182,7 @@ public class MbBuyPage {
 	 
 	 
 
-	 
-//========================================================Second Scenario================================================================================
+//-------------------------------------Sort Property High To Low---------------------------------------------------
 	  
      public void ClickOnSortByOption() 
      {
@@ -255,18 +256,40 @@ public class MbBuyPage {
 		 return flag;
 	 }
 	 
-//========================================================3rd ================================================================================
-
+	 
+//---------------------------------------Get Contact Details(Invalid Data)--------------------------------------------------- 
+	 
+	 
 	  public void ClickOnGetPhoneNoButton() 
 	  {	  	 
 	  	  getPhoneNoButton.click();
-	   }
-      
+	  }
+	  
+     
 	  public void ClickOnContinueButton() 
 	  {
 	      WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	  	  wait.until(ExpectedConditions.elementToBeClickable(ContinueButton)).click();
-	    }
+	  }
+	  
+	  public void ClickOnVerifyButton() throws InterruptedException 
+	  {
+		  Thread.sleep(17000);
+		  verifyButton.click();
+	  }
+	  
+	  public boolean ChechAllErrors() {
+		  if(userNameError.getText().equalsIgnoreCase("Name field can't be left blank. Please enter your name!") 
+			  ||emailIdError.getText().equalsIgnoreCase("Email ID field can't be left blank. Please enter!") 
+			  ||PhoneNoError.getText().equalsIgnoreCase("Please enter a 10-digit Mobile number!")) {
+			  return true;
+		  }
+		  return false;
+	  }
+	 
+//---------------------------------------Get Contact Details(Valid Data)---------------------------------------------------
+
+	 
 
 	  public void SendDetails(String UserName,String email,String phoneNo) throws InterruptedException 
 	  {
@@ -276,11 +299,7 @@ public class MbBuyPage {
 		  PhoneNo.sendKeys(phoneNo);		  
 	  }
 	  
-	  public void ClickOnVerifyButton() throws InterruptedException 
-	  {
-		  Thread.sleep(17000);
-		  verifyButton.click();
-	  }
+	  
 	  
 	  public boolean GetcontactDetailsOrNot() 
 	  {
@@ -296,18 +315,8 @@ public class MbBuyPage {
 	  }
 
 	  
-//========================================================4th ================================================================================	  
-	  	 
-	  public boolean ChechAllErrors() {
-		  if(userNameError.getText().equalsIgnoreCase("Name field can't be left blank. Please enter your name!") 
-			  ||emailIdError.getText().equalsIgnoreCase("Email ID field can't be left blank. Please enter!") 
-			  ||PhoneNoError.getText().equalsIgnoreCase("Please enter a 10-digit Mobile number!")) {
-			  return true;
-		  }
-		  return false;
-	  }
 
-//========================================================5th================================================================================  
+//---------------------------------------Share property via whatsapp---------------------------------------------------
 	  
 	  public void ClickOnShareIcon() {
 		  shareIcon.click();
@@ -318,8 +327,7 @@ public class MbBuyPage {
 	  }
 	  
 	 
-//========================================================Login================================================================================	 
-	 
+//---------------------------------------Share property via whatsapp---------------------------------------------------
 
 	 public void login() {
 		 driver.findElement(By.xpath("//section[@class=\"mb-header__main\"]/child::div/child::div[2]/div[2]/a")).click();
@@ -333,8 +341,8 @@ public class MbBuyPage {
 	 
 	
 	 
-//========================================================Getter Setter================================================================================	 	 
-	 
+
+//---------------------------------------Getter Setter---------------------------------------------------	 
 	 
 	 
 	 

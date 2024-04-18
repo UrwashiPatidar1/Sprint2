@@ -8,8 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features="C:\\Users\\URPATIDA\\eclipse\\BuyModule\\src\\test\\resource\\MbFeatures",
 glue="MbStepDefinition"
-//,tags="@GetPhoneNoWithValidDetails"
-
+,tags="@GetPhoneNoWithInvalidDetails"
 ,plugin= {("pretty")
 ,"html:target/HTMLReports/SwagReport.html"
 ,"json:target/JSONReports/SwagReport.json"

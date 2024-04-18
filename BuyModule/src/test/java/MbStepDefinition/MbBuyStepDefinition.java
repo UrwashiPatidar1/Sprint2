@@ -24,21 +24,22 @@ public class MbBuyStepDefinition
 {
     WebDriver driver;
 	MbBuyPage mbp;
-	WebDriverWait wait;
-
+	WebDriverWait wait; 
+	
+  
+  	
 //---------------------------------------Shortlist Property---------------------------------------------------
 	/*
 	 * Created By: Urwashi Patidar
 	 * Reviewed By:
 	 * Motive: This is to check that property is added to shortlisted
 	 */
-	
 	@Given("User is inside Ready to move shortcut")
 	public void user_is_inside_ready_to_move_shortcut() 
 	{
      	driver=BuyDriverSetup.chromedriver();
 //		driver=BuyDriverSetup.edgedriver();
-     	
+     	 
 		mbp=new MbBuyPage(driver);
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
@@ -155,33 +156,37 @@ public class MbBuyStepDefinition
          Assert.assertTrue(mbp.GetcontactDetailsOrNot());
      }
 
-//---------------------------------------Get Contact Details(Valid Data)---------------------------------------------------
-   	 /*
-     * Created By: Urwashi Patidar
-   	 * Reviewed By:
-   	 * Motive: This is to check if user is able to get error messges with invalid credentials
-   	 */
-     @When("User click on Get Phone no. button to fill invalid details")
-     public void user_click_on_get_phone_no_button_to_fill_invalid_details() 
-     {
-     	 wait.until(ExpectedConditions.elementToBeClickable(mbp.getGetPhoneNoButton()));
-         mbp.ClickOnGetPhoneNoButton();
-     }
-     
-     @When("User click on Get Contact Details button to fill invalid details")
-     public void user_click_on_get_contact_details_button_to_fill_invalid_details() 
-     {
-     	mbp.ClickOnContinueButton();
-     }
-     
-     @Then("User is able to get diffrent error messages details via email")
-     public void user_is_able_to_get_diffrent_error_messages_details_via_email() 
-     {
-         Assert.assertTrue(mbp.ChechAllErrors());
-     }
-   
-
 //---------------------------------------Get Contact Details(Invalid Data)---------------------------------------------------
+  	 /*
+     * Created By: Urwashi Patidar
+  	 * Reviewed By:
+  	 * Motive: This is to check if user is able to get error messges with invalid credentials
+  	 */
+	
+	
+    @When("User click on Get Phone no. button to fill invalid details")
+    public void user_click_on_get_phone_no_button_to_fill_invalid_details() 
+    {
+    	 wait.until(ExpectedConditions.elementToBeClickable(mbp.getGetPhoneNoButton()));
+        mbp.ClickOnGetPhoneNoButton();
+    }
+    
+    
+    @When("User click on Get Contact Details button to fill invalid details")
+    public void user_click_on_get_contact_details_button_to_fill_invalid_details() 
+    {
+    	mbp.ClickOnContinueButton();
+    }
+    
+    
+    @Then("User is able to get diffrent error messages details via email")
+    public void user_is_able_to_get_diffrent_error_messages_details_via_email() 
+    {
+        Assert.assertTrue(mbp.ChechAllErrors());
+    }
+  
+
+//---------------------------------------Share property via whatsapp---------------------------------------------------
    	 /*
      * Created By: Urwashi Patidar
    	 * Reviewed By:
