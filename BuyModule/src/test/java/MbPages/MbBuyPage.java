@@ -226,7 +226,7 @@ public class MbBuyPage {
 		 {
 		   	 if((Tags[j].equalsIgnoreCase("cr")) && (Tags[j+1].equalsIgnoreCase("cr"))) 
 		   	 {
-		   		 if(Prices[j]>Prices[j+1]) 
+		   		 if(Prices[j]>=Prices[j+1]) 
 		   		 {
 		   			 flag=true;
 		   		 }
@@ -242,7 +242,7 @@ public class MbBuyPage {
 		   	 }
 		   	 else 
 		   	 {
-		   		 if(Prices[j]>Prices[j+1])
+		   		 if(Prices[j]>=Prices[j+1])
 		   		 {
 		   			 flag=true;
 		   		 }
